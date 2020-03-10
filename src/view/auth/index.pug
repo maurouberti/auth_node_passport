@@ -1,0 +1,13 @@
+extends ./../layout/main
+
+block content
+    div(class='col-xs-12 col-md-12')
+        form(action='/auth/login', method='POST')
+            h2.text-center Login
+            div.form-group
+                input(type='text', name='username', placeholder='Usuário:', class='form-control')
+            div.form-group
+                input(type='password', name='password', placeholder='Senha:', class='form-control')
+            div.form-group
+                button(type='submit', class='btn btn-primary') Login
+                a(class='btn btn-outline-primary', role='button', href='/users/new') Criar usuário

@@ -1,0 +1,17 @@
+extends ./../layout/main
+
+block content
+    div(class='col-xs-12 col-md-12')
+        form(action='/users', method='POST')
+            h2.text-center Novo Usuário
+            div.form-group
+                input(type='text', name='name', placeholder='Nome:', class='form-control')
+            div.form-group
+                input(type='text', name='username', placeholder='Usuário:', class='form-control')
+            div.form-group
+                input(type='email', name='email', placeholder='E-Mail:', class='form-control')
+            div.form-group
+                input(type='password', name='password', placeholder='Senha:', class='form-control')
+            div.form-group
+                button(type='submit', class='btn btn-primary') Gravar
+                a(class='btn btn-outline-primary', role='button', href='/users') Cancelar

@@ -1,0 +1,16 @@
+extends ./../layout/main
+
+block content
+    div.col-xs-12.col-md-12
+        h1 Express.js + Passport.js
+    div.col-xs-12.col-md-12
+        if (user)
+            label #{user.name}, você esta conectado! 
+            p
+            a(href='/users') Lista de usuários
+            br
+            a(href='/auth/logout') Logout
+        else
+            label Você não esta conectado
+            p
+            a(href='/auth') Login

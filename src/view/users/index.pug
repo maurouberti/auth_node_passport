@@ -1,0 +1,29 @@
+extends ./../layout/main
+
+block content
+    div(class='col-xs-12 col-md-12')
+        form(action='/users', method='POST')
+            h2.text-center Lista de Usuários
+            if (user)
+                label Olá #{user.name}!
+            p 
+            a(class='btn btn-primary', role='button', href='/users/new') Novo
+            a(class='btn btn-outline-primary', role='button', href='/') Menu
+            p
+            table(class='table table-bordered')
+                thead
+                    tr
+                        th Nome
+                        th Usuário
+                        th E-Mail
+                        th Ação
+                tbody
+                    each user in users
+                        tr
+                            td= user.name
+                            td= user.username
+                            td= user.email
+                            td
+                                div
+                                    form(action='/users/' + user._id + '/?_method=DELETE', method='POST')
+                                        button(type='submit', class='btn btn-primary') Excluir
